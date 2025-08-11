@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1 class="title">Scientific Calculator</h1>
+        
+        <div class="mode-toggle">
+            <button class="mode-btn active" id="deg-btn" onclick="setAngleMode('deg')">DEG</button>
+            <button class="mode-btn" id="rad-btn" onclick="setAngleMode('rad')">RAD</button>
+        </div>
+
+        <div class="display">
+            <div class="display-secondary" id="expression"></div>
+            <div class="display-main" id="result">0</div>
+        </div>
+
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn btn-special" onclick="clearAll()">C</button>
+            <button class="btn btn-special" onclick="clearEntry()">CE</button>
+            <button class="btn btn-special" onclick="deleteLast()">⌫</button>
+            <button class="btn btn-operator" onclick="appendOperator('/')">/</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.pow(', '**')">x^y</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.sqrt(', '√(')">&radic;</button>
+
+            <!-- Row 2 -->
+            <button class="btn btn-function" onclick="appendFunction('Math.sin(', 'sin(')">sin</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.cos(', 'cos(')">cos</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.tan(', 'tan(')">tan</button>
+            <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.log10(', 'log(')"">log</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.log(', 'ln(')"">ln</button>
+
+            <!-- Row 3 -->
+            <button class="btn btn-function" onclick="appendFunction('Math.asin(', 'asin(')">asin</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.acos(', 'acos(')">acos</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.atan(', 'atan(')">atan</button>
+            <button class="btn btn-operator" onclick="appendOperator('-')">-</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.exp(', 'e^(')"">e^x</button>
+            <button class="btn btn-function" onclick="appendConstant('Math.PI', 'π')"">π</button>
+
+            <!-- Row 4 -->
+            <button class="btn btn-function" onclick="appendFunction('Math.sinh(', 'sinh(')">sinh</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.cosh(', 'cosh(')">cosh</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.tanh(', 'tanh(')">tanh</button>
+            <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+            <button class="btn btn-function" onclick="appendFunction('factorial(', '!')">n!</button>
+            <button class="btn btn-function" onclick="appendConstant('Math.E', 'e')"">e</button>
+
+            <!-- Row 5 -->
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn btn-operator" onclick="appendOperator('%')">%</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.abs(', '|')">|x|</button>
+            <button class="btn btn-function" onclick="appendOperator('^')">x²</button>
+
+            <!-- Row 6 -->
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn btn-function" onclick="appendOperator('(')">(</button>
+            <button class="btn btn-function" onclick="appendOperator(')')">)</button>
+            <button class="btn btn-function" onclick="reciprocal()">1/x</button>
+
+            <!-- Row 7 -->
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('0')" colspan="2">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+
+            <!-- Row 8 -->
+            <button class="btn btn-operator btn-wide" onclick="calculate()">=</button>
+            <button class="btn btn-function" onclick="toggleSign()">±</button>
+            <button class="btn btn-function" onclick="random()">Rand</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.floor(', 'floor(')">⌊x⌋</button>
+            <button class="btn btn-function" onclick="appendFunction('Math.ceil(', 'ceil(')">⌈x⌉</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

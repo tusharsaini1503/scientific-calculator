@@ -1,0 +1,167 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a1a2a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calculator {
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .display {
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .display-main {
+            color: #ffffff;
+            font-size: 2.2em;
+            text-align: right;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+
+        .display-secondary {
+            color: rgba(138, 43, 226, 0.8);
+            font-size: 1em;
+            text-align: right;
+            min-height: 20px;
+            word-break: break-all;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .btn {
+            background: rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1.1em;
+            padding: 18px 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background: rgba(138, 43, 226, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
+        }
+
+        .btn-operator {
+            background: rgba(186, 85, 211, 0.4);
+            border-color: rgba(186, 85, 211, 0.6);
+        }
+
+        .btn-operator:hover {
+            background: rgba(186, 85, 211, 0.6);
+        }
+
+        .btn-special {
+            background: rgba(75, 0, 130, 0.4);
+            border-color: rgba(75, 0, 130, 0.6);
+        }
+
+        .btn-special:hover {
+            background: rgba(75, 0, 130, 0.6);
+        }
+
+        .btn-wide {
+            grid-column: span 2;
+        }
+
+        .btn-function {
+            font-size: 0.9em;
+            background: rgba(72, 61, 139, 0.4);
+            border-color: rgba(72, 61, 139, 0.6);
+        }
+
+        .btn-function:hover {
+            background: rgba(72, 61, 139, 0.6);
+        }
+
+        .mode-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .mode-btn {
+            background: rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mode-btn.active {
+            background: rgba(138, 43, 226, 0.6);
+            border-color: rgba(138, 43, 226, 0.8);
+        }
+
+        .title {
+            text-align: center;
+            color: rgba(138, 43, 226, 0.9);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .calculator {
+                padding: 15px;
+            }
+            
+            .btn {
+                font-size: 0.9em;
+                padding: 15px 5px;
+                min-height: 50px;
+            }
+            
+            .display-main {
+                font-size: 1.8em;
+            }
+        }
+  
